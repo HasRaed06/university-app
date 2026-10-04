@@ -1,5 +1,5 @@
 import './App.css'
-import imageEtudient from '../assets/images/IMG_20231228_164457_819.jpg';
+import imageEtudient from '/src/assets/IMG_20231228_164457_819.jpg';
 
 function App() {
   const prenom = "Raed";
