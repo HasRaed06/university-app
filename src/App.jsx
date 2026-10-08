@@ -38,7 +38,9 @@ function App() {
             <span className="info-value">{valeur}</span>
           </p>
         ))}
-        <button className='btn-contact'>Contacter</button>
+        <a href="mailto: hasnaouiraed5@gmail.com">
+          <button className='btn-contact'>Contacter</button>
+        </a>
       </div>
     </div>
   )
