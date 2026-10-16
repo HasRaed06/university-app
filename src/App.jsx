@@ -25,21 +25,20 @@ function App() {
   ]
 
   return (
-    <div className="card">
-      <div className="card-header">
-        <img src={imageEtudient} alt="Image de l'étudiant" className="avatar" />
+    <div>
+      <div>
+        <img src={imageEtudient} alt="Image de l'étudiant" />
         <h1>Fiche Étudiant</h1>
       </div>
 
-      <div className="card-body">
+      <div>
         {donneEtudient.map(({ label, valeur }) => (
-          <p key={label} className="info-row">
-            <span className="info-label">{label} :</span>
-            <span className="info-value">{valeur}</span>
+          <p key={label}>
+            {label} : {valeur}
           </p>
         ))}
         <a href="mailto: hasnaouiraed5@gmail.com">
-          <button className='btn-contact'>Contacter</button>
+          <button>Contacter</button>
         </a>
       </div>
     </div>
