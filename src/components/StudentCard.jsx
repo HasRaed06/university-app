@@ -1,30 +1,20 @@
 import imageEtudient from '/src/assets/IMG_20231228_164457_819.jpg';
+import './StudentCard.css';
 
-function App() {
-  const etudient = {
-  prenom : "Raed",
-  nom : "Hasnaoui",
-  email : "hasnaouiraed5@gmail.com",
-  tel : "98 241 615",
-  filiere : "Génie Logiciel et systèmes d'information",
-  annee : "2026/27",
-  groupe : "GLSI 2",
-  ville : "Sidi Alouane",
-  age : 19,
-  }
-
+function StudentCard(props) {
+  
   const donneEtudient = [
-    {label: "Nom & Prénom", valeur: etudient.nom + " " + etudient.prenom},
-    {label: "Email", valeur: etudient.email},
-    {label: "Téléphone", valeur: "+216 " + etudient.tel},
-    {label: "Filière", valeur: etudient.filiere},
-    {label: "Année d'etude", valeur: etudient.annee},
-    {label: "Groupe", valeur: etudient.groupe},
-    {label: "Ville", valeur: etudient.ville},
-  ]
+    {label: "Nom & Prénom", valeur: props.nom + " " + props.prenom},
+    {label: "Email", valeur: props.email},
+    {label: "Téléphone", valeur: "+216 " + props.tel},
+    {label: "Filière", valeur: props.filiere},
+    {label: "Année d'etude", valeur: props.annee},
+    {label: "Groupe", valeur: props.groupe},
+    {label: "Ville", valeur: props.ville},
+  ] 
 
   return (
-    <div>
+    <div className='container'>
       <div>
         <img src={imageEtudient} alt="Image de l'étudiant" />
         <h1>Fiche Étudiant</h1>
@@ -36,7 +26,7 @@ function App() {
             {label} : {valeur}
           </p>
         ))}
-        <a href="mailto: hasnaouiraed5@gmail.com">
+        <a href={"mailto: "+props.email}>
           <button>Contacter</button>
         </a>
       </div>
@@ -44,4 +34,4 @@ function App() {
   )
 }
 
-export default App;
+export default StudentCard;
