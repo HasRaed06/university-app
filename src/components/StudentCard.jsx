@@ -1,17 +1,15 @@
 import imageEtudient from '/src/assets/IMG_20231228_164457_819.jpg';
 import './StudentCard.css';
+import { useState } from 'react';
 
 function StudentCard(props) {
+ 
+  const [coordonneesVisibles, setCordonneesVisibles] = useState(false);
+
+  const toggle = () => {
+    setCordonneesVisibles(!coordonneesVisibles);
+  }
   
-  const donneEtudient = [
-    {label: "Nom & Prénom", valeur: props.nom + " " + props.prenom},
-    {label: "Email", valeur: props.email},
-    {label: "Téléphone", valeur: "+216 " + props.tel},
-    {label: "Filière", valeur: props.filiere},
-    {label: "Année d'etude", valeur: props.annee},
-    {label: "Groupe", valeur: props.groupe},
-    {label: "Ville", valeur: props.ville},
-  ] 
 
   return (
     <div className='container'>
@@ -21,11 +19,23 @@ function StudentCard(props) {
       </div>
 
       <div>
-        {donneEtudient.map(({ label, valeur }) => (
-          <p key={label}>
-            {label} : {valeur}
-          </p>
-        ))}
+          <p>Nom & Prenom : {props.nom + " " + props.prenom}</p>
+          {coordonneesVisibles && ( 
+            <>
+              <p>Email : {props.email}</p>
+              <p>Téléphone : {props.tel}</p>
+            </>
+          )
+          }
+          <p>Filière : {props.filiere}</p>
+          <p>Année d'etude : {props.annee}</p>
+          <p>Groupe : {props.groupe}</p>
+          <p>Ville : {props.ville}</p>
+          
+
+        <button onClick={toggle}>{coordonneesVisibles ? "Masquer les coordonnées" : "Afficher les coordonnées"}</button>
+        <button onClick={() => props.supprimer(props.email)}>Supprimer</button>
+        <button onClick={() => props.modifier(props.email)}>Modifier</button>
         <a href={"mailto: "+props.email}>
           <button>Contacter</button>
         </a>
