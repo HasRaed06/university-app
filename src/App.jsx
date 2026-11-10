@@ -3,6 +3,7 @@ import StudentCard from './components/StudentCard.jsx'
 import Header from './components/Header.jsx'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
+import NewStudentForm from './components/NewStudentForm.jsx'
 import { useState } from 'react'
 
 function App() {
@@ -31,9 +32,8 @@ function App() {
   },
   ]);
 
-  const ajouterEtudient = () => {
-    const newStudent = {...etudients.at(-1)};
-    newStudent.email = newStudent.email + "m";
+  const ajouterEtudient = (newStudent) => {
+    console.log([...etudients], newStudent);
     setEtudient([...etudients, newStudent]);
   }
 
@@ -60,15 +60,14 @@ function App() {
     etudient.filiere.toLowerCase().includes(rech.toLowerCase())
     );
 
-
   return (
     <div className='container'>
       <Header />
       <Navbar />
+      <NewStudentForm ajouterEtudient={ajouterEtudient}/>
       <div>
         <label>recherche : </label>
         <input type="text" onChange={(e) => setRech(e.target.value)}/>
-        <button onClick={ajouterEtudient}>Ajouter Etudient</button>
       </div>
       {filtredEtudients.map((etudient) => (
         <StudentCard
