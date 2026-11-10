@@ -41,15 +41,16 @@ function App() {
     setEtudient(etudients.filter((etudient) => etudient.email !== email));
   }
   
-  const modifierEtudient = (email) => {
-    const nouvPrenom = prompt("Entrer le nouvel prenom : ");
+  const modifierEtudient = (email, newInfo) => {
     let nouvEtudients = [];
 
     etudients.map((etudient) => {
       if (etudient.email === email){
-        etudient.prenom = nouvPrenom;
+        nouvEtudients = [...nouvEtudients, newInfo];
       }
-      nouvEtudients = [...nouvEtudients, etudient];
+      else{
+        nouvEtudients = [...nouvEtudients, etudient];
+      }
     })
     setEtudient([...nouvEtudients])
   }
@@ -69,6 +70,7 @@ function App() {
         <label>recherche : </label>
         <input type="text" onChange={(e) => setRech(e.target.value)}/>
       </div>
+      <div className='cardsContainer'>
       {filtredEtudients.map((etudient) => (
         <StudentCard
           prenom={etudient.prenom}
@@ -85,6 +87,7 @@ function App() {
           key={etudient.email}
         />
       ))}
+      </div>
       <Footer />
     </div>
   )

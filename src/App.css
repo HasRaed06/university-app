@@ -182,11 +182,10 @@
     border-right-color: var(--border);
   }
 }
-img {
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-}
+
 .container{
   display: inline-block;
+}
+.cardsContainer{
+  display: inline-flexbox;
 }

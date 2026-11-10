@@ -1,6 +1,112 @@
-.container{
-    margin: 10px;
-    border-color: lightblue;
-    border-width: 20px;
+.studentCardContainer{
+    border: solid 1px lightblue;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.200);
     border-radius: 10px;
+    margin: 10px;
+    padding: 30px 20px;
+    background-color: lightblue;
+    position: relative;
+    width: 40%;
+}
+.pfpImage{
+    border: solid 2px white;
+    box-shadow: 0 0 15px 5px white;
+    height: 96px;
+    width: 96px;
+    border-radius: 100%;
+}
+h1{
+    color: whitesmoke;
+    text-shadow: 0 0 7px rgba(0, 0, 0, 0.05);
+}
+p{
+    color: white;
+    text-shadow: 0 0 7px rgba(0, 0, 0, 0.05);
+}
+
+.iconBtns{
+    position: absolute;
+    border-width: 0;
+    margin: 2%;
+    width: 3vw;
+    height: 5.5vh;
+    background-color: transparent;
+    border-radius: 7px;
+    border: solid 1px transparent;
+    color: white;
+    border: solid 1px transparent;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.100);
+    transition: all 0.4s ease;
+}
+.modifierBtn{
+    top: 0;
+    left: 0;
+}
+.cancelBtn{
+    top: 0;
+    left: 0;
+}
+.supprimerBtn{
+    top: 0;
+    right: 0;
+}
+.applyBtn{
+    top: 0;
+    right: 0;
+    border: solid 1px transparent;
+}
+.textBtns{
+    border: solid 1px lightblue;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.100);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    background-color: lightblue;
+    color: white;
+}
+.textBtns:hover{
+    box-shadow: 0 0 9px rgba(255, 255, 255, 0.465);
+    border-color: white;
+    transition: all 0.5s;
+}
+.textBtns:active{
+    background-color: rgba(173, 216, 230, 0.164);
+}
+.supprimerBtn:hover, .modifierBtn:hover, .cancelBtn:hover, .applyBtn:hover{
+    background-color: rgba(220, 220, 220, 0.416);
+    border-color: white;
+    box-shadow: 0 0 9px rgba(255, 255, 255, 0.465);
+}
+.cancelBtn:hover, .supprimerBtn:hover{
+    background-color: rgba(225, 30, 30, 0.712);
+}
+.applyBtn:hover{
+    background-color: rgba(1, 140, 1, 0.712);
+}
+.icons{
+  width: 80%;
+  height: 80%;
+  filter: invert(1);
+}
+.bottomBtnsContainer{
+    margin-top: 15px;
+}
+.studentCardContainer div table{
+    padding: 0;
+    color: whitesmoke;
+}
+td{
+    padding: 0;
+}
+.studentCardContainer div table{
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+.studentCardContainer div table tbody tr td{
+    max-width: 20vw;
 }
